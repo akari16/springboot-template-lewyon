@@ -1,5 +1,6 @@
-package com.lewyon.template;
+package com.lewyon.template.controller;
 
+import com.lewyon.template.entity.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;

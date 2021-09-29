@@ -1,5 +1,6 @@
 package com.lewyon.template;
 
+import com.lewyon.template.controller.UserController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

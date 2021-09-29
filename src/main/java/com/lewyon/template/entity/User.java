@@ -1,4 +1,4 @@
-package com.lewyon.template;
+package com.lewyon.template.entity;
 
 import lombok.Data;
 import io.swagger.annotations.ApiModel;
@@ -14,5 +14,10 @@ public class User {
     private String name;
     @ApiModelProperty("用户年龄")
     private Integer age;
+
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 
 }
