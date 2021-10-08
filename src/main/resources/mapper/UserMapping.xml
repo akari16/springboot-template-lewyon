@@ -6,8 +6,14 @@
     <select id="findByName" resultType="com.lewyon.template.entity.User">
         SELECT * FROM USER WHERE NAME = #{name}
     </select>
-
+    <select id="getAllUser" resultType="com.lewyon.template.entity.User">
+        SELECT * FROM USER
+    </select>
     <insert id="insert">
         INSERT INTO USER(NAME, AGE) VALUES(#{name}, #{age})
     </insert>
+
+<!--    <delete id="delete">-->
+<!--        delete USER -->
+<!--    </delete>-->
 </mapper>
