@@ -11,7 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @Slf4j
 @EnableSwagger2Doc
-@MapperScan("com.lewyon.template.mapper")
 @SpringBootApplication
 public class TemplateApplication {
 

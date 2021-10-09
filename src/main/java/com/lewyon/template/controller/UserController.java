@@ -1,13 +1,11 @@
 package com.lewyon.template.controller;
 
-import com.lewyon.template.entity.User;
-import com.lewyon.template.service.UserService;
+import com.lewyon.template.domain.People;
+import com.lewyon.template.service.PeopleService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.ui.Model;
 
 import java.util.*;
 
@@ -94,16 +92,28 @@ public class UserController {
 
     //使用另外一个路径处理user相关接口
 
+//
+//    private UserService userService;
+//
+//    @GetMapping("/getUser")
+//    @ApiOperation(value = "获取用户列表")
+//    public List<User> getAllUser() {
+//        List<User> users = userService.getAllUser();
+//        return users;
+//    }
 
-    private UserService userService;
+    @Autowired
+    private PeopleService peopleService;
 
-    @GetMapping("/getUser")
-    @ApiOperation(value = "获取用户列表")
-    public List<User> getAllUser() {
-        List<User> users = userService.getAllUser();
-        return users;
+    @ApiOperation(value = "查询某一条记录")
+    @GetMapping(value = "/all")
+    public List<People> getAllPeoples() {
+        List<People> people = peopleService.getAllPeoples();
+        return people;
     }
 
 
 }
+
+
 

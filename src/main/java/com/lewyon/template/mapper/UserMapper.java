@@ -12,13 +12,13 @@ import java.util.List;
  * @explain 查询对象
  * @aate 2021/9/29
  */
-public interface UserMapper {
-
-    List<User> getAllUser();
-
-    User findByName(@Param(value = "name") String name);
-
-    int insert(@Param("name") String name, @Param("age") Integer age);
-
-//    int delete(@Param("name") String name, @Param("age") Integer age);
-}
+//public interface UserMapper {
+//
+////    List<User> getAllUser();
+////
+////    User findByName(@Param(value = "name") String name);
+////
+////    int insert(@Param("name") String name, @Param("age") Integer age);
+//
+////    int delete(@Param("name") String name, @Param("age") Integer age);
+//}
