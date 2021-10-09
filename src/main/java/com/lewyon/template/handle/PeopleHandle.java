@@ -18,10 +18,10 @@ public interface PeopleHandle {
 
     /***
      * 查询数据表中的所有记录
-     * 对应SQL：select * from people
+     * 对应SQL：select * from user
      * @return
      */
-    @Select("SELECT * FROM PEOPLE")
+    @Select("SELECT * FROM user")
     List<People> getAllPeople();
 
     /***

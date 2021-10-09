@@ -105,7 +105,7 @@ public class UserController {
     @Autowired
     private PeopleService peopleService;
 
-    @ApiOperation(value = "查询某一条记录")
+    @ApiOperation(value = "查询所有用户")
     @GetMapping(value = "/all")
     public List<People> getAllPeoples() {
         List<People> people = peopleService.getAllPeoples();
