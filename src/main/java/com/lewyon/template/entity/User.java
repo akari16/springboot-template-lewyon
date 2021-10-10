@@ -1,21 +1,17 @@
 package com.lewyon.template.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 /**
  * @param
  * @author Liuyuan
  * @return Result
- * @explain 查询对象
- * @aate 2021/9/29
+ * @explain 用户实体类
+ * @aate 2021/10/9
  */
 
 @Data
@@ -25,17 +21,47 @@ import java.util.List;
 public class User {
 
     @ApiModelProperty("用户编号")
-    private Long id;
-    @ApiModelProperty("用户姓名")
-    private String name;
-    @ApiModelProperty("用户年龄")
-    private Integer age;
+    private int id;
 
-    public User(String name, Integer age) {
+    @ApiModelProperty("用户名称")
+    private String name;
+
+    @ApiModelProperty("用户年龄")
+    private String age;
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getAge(){
+        return age;
+    }
+
+    public void setAge(String age){
+        this.age = age;
+    }
+
+
+    public void User() {
+
+    }
+
+    public void User(int id, String name, String age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }
 
-    @ApiModelProperty("用户列表")
-    private List<User> users = new ArrayList<>();
 }

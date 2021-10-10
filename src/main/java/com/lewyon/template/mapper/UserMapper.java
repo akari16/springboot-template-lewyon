@@ -10,15 +10,45 @@ import java.util.List;
  * @author Liuyuan
  * @return Result
  * @explain 查询对象
- * @aate 2021/9/29
+ * @aate 2021/10/9
  */
+
+@Mapper
 public interface UserMapper {
 
+    /***
+     * 查询数据表中的所有记录
+     * @return
+     */
     List<User> getAllUser();
 
-    User findByName(@Param(value = "name") String name);
+    /***
+     * 查询数据表中的某一条记录
+     * @return
+     */
+    User getUser(@Param("id") int id);
 
-    int insert(@Param("name") String name, @Param("age") Integer age);
+    /***
+     * 插入一条数据
+     * @return
+     */
+    int insertUser(User user);
 
-//    int delete(@Param("name") String name, @Param("age") Integer age);
+
+    /***
+     * 更新一条记录
+     * @param user 准备更新进去的数据
+     * @return
+     */
+
+    int updateUser(User user);
+
+    /***
+     * 删除某条记录（@Delete）
+     * @param id 根据ID去删除一条记录
+     * @return
+     */
+    int deleteUser(@Param("id") int id);
+
 }
+

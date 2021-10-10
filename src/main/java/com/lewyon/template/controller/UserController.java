@@ -1,8 +1,7 @@
 package com.lewyon.template.controller;
 
-import com.lewyon.template.entity.People;
 import com.lewyon.template.entity.User;
-import com.lewyon.template.service.PeopleService;
+import com.lewyon.template.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,24 +11,19 @@ import java.util.*;
 
 @Api(tags = "用户管理")
 @RestController
-@RequestMapping(value = "/users")     // 通过这里配置使下面的映射都在/users下
+@RequestMapping(value = "/user")     // 通过这里配置使下面的映射都在/users下
 public class UserController {
 
-//    // 创建线程安全的Map，模拟users信息的存储
-//    static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
-//
-//    /**
-//     * 处理"/users/"的GET请求，用来获取用户列表
-//     *
-//     * @return
-//     */
-//    @GetMapping("/query")
-//    @ApiOperation(value = "获取用户列表")
-//    public List<User> getUserList() {
-//        // 还可以通过@RequestParam从页面中传递参数来进行查询条件或者翻页信息的传递
-//        List<User> r = new ArrayList<User>(users.values());
-//        return r;
-//    }
+    // 创建线程安全的Map，模拟users信息的存储
+    @Autowired
+    private UserService userService;
+
+    @ApiOperation(value = "查询所有用户")
+    @GetMapping(value = "/allUser")
+    public List<User> getAllUser() {
+        List<User> users = userService.getAllUser();
+        return users;
+    }
 //
 //    /**
 //     * 处理"/users/"的POST请求，用来创建User
@@ -103,15 +97,7 @@ public class UserController {
 //        return users;
 //    }
 
-    @Autowired
-    private PeopleService peopleService;
 
-    @ApiOperation(value = "查询所有用户")
-    @GetMapping(value = "/all")
-    public List<People> getAllPeoples() {
-        List<People> people = peopleService.getAllPeoples();
-        return people;
-    }
 
 
 }
