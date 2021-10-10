@@ -1,6 +1,6 @@
-package com.lewyon.template.handle;
+package com.lewyon.template.mapper;
 
-import com.lewyon.template.domain.People;
+import com.lewyon.template.entity.People;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 @Mapper
-public interface PeopleHandle {
+public interface PeopleMapper {
 
     /***
      * 查询数据表中的所有记录

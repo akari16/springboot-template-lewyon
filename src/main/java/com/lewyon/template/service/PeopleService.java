@@ -1,11 +1,12 @@
 package com.lewyon.template.service;
 
-import com.lewyon.template.domain.People;
+import com.lewyon.template.entity.People;
+
 
 import java.util.List;
 
 /**
- * @param id ：id
+ * @param
  * @author Liuyuan
  * @return Result
  * @explain 查询对象

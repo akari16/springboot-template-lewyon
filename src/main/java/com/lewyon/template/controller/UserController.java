@@ -1,6 +1,7 @@
 package com.lewyon.template.controller;
 
-import com.lewyon.template.domain.People;
+import com.lewyon.template.entity.People;
+import com.lewyon.template.entity.User;
 import com.lewyon.template.service.PeopleService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

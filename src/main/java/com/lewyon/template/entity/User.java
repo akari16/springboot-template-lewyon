@@ -38,5 +38,4 @@ public class User {
 
     @ApiModelProperty("用户列表")
     private List<User> users = new ArrayList<>();
-
 }

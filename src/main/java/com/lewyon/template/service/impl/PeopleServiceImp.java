@@ -1,7 +1,7 @@
-package com.lewyon.template.service;
+package com.lewyon.template.service.impl;
 
-import com.lewyon.template.domain.People;
-import com.lewyon.template.handle.PeopleHandle;
+import com.lewyon.template.entity.People;
+import com.lewyon.template.mapper.PeopleMapper;
 import com.lewyon.template.service.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,30 +20,30 @@ public class PeopleServiceImp implements PeopleService {
 
     //导入
     @Autowired
-    private PeopleHandle peopleHandle;
+    private PeopleMapper peopleMapper;
 
     @Override
     public List<People> getAllPeoples() {
-        return peopleHandle.getAllPeople();
+        return peopleMapper.getAllPeople();
     }
 
     @Override
     public People getOnePeople(int id) {
-        return peopleHandle.getPeople(id);
+        return peopleMapper.getPeople(id);
     }
 
     @Override
     public boolean updatePeople(People people) {
-        return peopleHandle.updatePeople(people) > 0;
+        return peopleMapper.updatePeople(people) > 0;
     }
 
     @Override
     public boolean addPeople(People people) {
-        return peopleHandle.insertPeople(people.getAge(), people.getName()) >0;
+        return peopleMapper.insertPeople(people.getAge(), people.getName()) >0;
     }
 
     @Override
     public boolean delPeople(int id) {
-        return peopleHandle.deletePeople(id)>0;
+        return peopleMapper.deletePeople(id)>0;
     }
 }
